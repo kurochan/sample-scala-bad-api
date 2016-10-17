@@ -1,0 +1,14 @@
+<configuration>
+
+    <appender name="AppLogAppender" class="ch.qos.logback.core.FileAppender">
+        <file>logs/log-for-error-reporting.log</file>
+        <append>true</append>
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="org.kurochan.logback_stackdriver_logging.StackdriverErrorReportingLayout" />
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="AppLogAppender" />
+    </root>
+</configuration>
